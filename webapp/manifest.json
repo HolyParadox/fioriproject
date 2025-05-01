@@ -1,0 +1,162 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "travelexpenses",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.8.6",
+      "toolsId": "24f038f9-09b8-4ffb-964d-e35ef3fbe49d"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.110.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "theme": {
+      "name": "sap_fiori_3"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "travelexpenses.i18n.i18n"
+        }
+      },
+      "tableModel": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "tableModel"
+      },
+      "tableModel2": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "tableModel2"
+      }, "formData": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "formData"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ],
+      
+      
+        "view": [{
+          "up": {
+            "viewName": "travelexpenses.view.Upload",
+            "type": "XML",
+            "controllerName": "travelexpenses.controller.Upload",
+            "id": "Upload"
+          }
+    }]
+     
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "travelexpenses.view",
+        "controlAggregation": "pages",
+        "controlId": "View1",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "name": "RouteInput",
+          "pattern": ":?query:",
+          "target": [
+            "TargetInput"
+          ]
+        },{
+          "name": "RouteUpload",
+          "pattern": "Upload",
+          "target": [ "TargetUpload"  ]
+        }
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        },
+        "TargetInput": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "idApp",
+          "viewName": "App"
+        },
+        "TargetUpload": {
+          "viewName": "Upload",
+          "viewLevel": 3,
+          "viewId": "idUpload",
+          "viewType": "XML",
+          "transition": "slide",
+          "titleTarget": false,
+          "clearControlAggregation": false
+        }
+      },"dialogs": {
+        "Upload": {
+          "type": "XML",
+          "viewName": "Upload"
+        }
+      }
+  },
+  "rootView": {
+    "viewName": "travelexpenses.view.App",
+    "type": "XML",
+    "async": true,
+    "id": "View1"
+  }
+}
+}

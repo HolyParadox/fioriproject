@@ -1,0 +1,44 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:layout="sap.ui.layout"
+          controllerName="travelexpenses.controller.Upload">
+  
+  <Page id="_IDGenPage2" title="Travel Expenses">
+    <content>
+      <Panel id="_IDGenPanel1" headerText="Upload PDFs">
+        <layout:VerticalLayout id="pdfLayout"/>
+      </Panel>
+       <Button id="_IDGenButton1" text="Submit" press=".onSubmit"/>
+        <Button id="_IDGenButton122" text="OK" press="handleClose"/>
+      <Panel id="_IDGenPanel2" headerText="Expenses">
+        <Table id="expensesTable">
+          <columns>
+            <Column id="_IDGenColumn1">
+              <Text id="_IDGenText1" text="Date"/>
+            </Column>
+            <Column id="_IDGenColumn2">
+              <Text id="_IDGenText2" text="Description"/>
+            </Column>
+            <Column id="_IDGenColumn3">
+              <Text id="_IDGenText3" text="Amount"/>
+            </Column>
+          </columns>
+          <items>
+            <ColumnListItem id="_IDGenColumnListItem1">
+              <cells>
+                <Text id="_IDGenText4" text="{formData>Date}"/>
+                <Text id="_IDGenText5" text="{formData>Description}"/>
+                <Text id="_IDGenText6" text="{formData>Amount}"/>
+              </cells>
+            </ColumnListItem>
+          </items>
+        </Table>
+       
+      </Panel>
+    </content>
+ 
+      
+     
+  </Page>
+
+</mvc:View>

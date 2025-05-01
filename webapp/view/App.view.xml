@@ -1,0 +1,71 @@
+<mvc:View controllerName="travelexpenses.controller.App" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:unified="sap.ui.unified" displayBlock="true">
+    <App id="_IDGenApp1" class="body">
+        <Page id="_IDGenPage1" title="Travel Expenses" class="body">
+            <content>
+                <Panel id="_IDGenPanel1">
+                    <headerToolbar>
+                        <Toolbar id="_IDGenToolbar1">
+                            <Title id="_IDGenTitle1" text="Add Expense" level="H2" />
+                            <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                            <Button id="_IDGenButton1" text="Add" press="onSubmit" />
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <Label id="_IDGenLabel1" text="Date" />
+                    <DatePicker id="_IDGenDatePicker1" value="{path: '/date'}" />
+
+                    <Label id="_IDGenLabel2" text="Description" />
+                    <Input id="_IDGenInput1" value="{path: '/description'}" />
+
+                    <Label id="_IDGenLabel3" text="Amount" />
+                    <Input id="_IDGenInput2" value="{path: '/amount'}" />
+
+                    <Label id="_IDGenLabel4" text="Currency" />
+                    <Input id="_IDGenInput3" value="{path: '/currency'}" />
+
+                    <Label id="_IDGenLabel5" text="Category" />
+                    <Input id="_IDGenInput4" value="{path: '/category'}" />
+                    <Button id="_IDGenButton2" text="Open Popup" press="onOpenPopup" />
+                     
+                </Panel>
+                <Panel id="_IDGenPanel2">
+                    <headerToolbar>
+                        <Toolbar id="_IDGenToolbar2">
+                            <Title id="_IDGenTitle2" text="Expenses" level="H2" />
+                        </Toolbar>
+                    </headerToolbar>
+                    <Table id="_IDGenTable1" items="{tableModel>/items}">
+                        <columns>
+                            <Column id="_IDGenColumn1">
+                                <Text id="_IDGenText1" text="Date" />
+                            </Column>
+                            <Column id="_IDGenColumn2">
+                                <Text id="_IDGenText2" text="Description" />
+                            </Column>
+                            <Column id="_IDGenColumn3">
+                                <Text id="_IDGenText3" text="Amount" />
+                            </Column>
+                            <Column id="_IDGenColumn4">
+                                <Text id="_IDGenText4" text="Currency" />
+                            </Column>
+                            <Column id="_IDGenColumn5">
+                                <Text id="_IDGenText5" text="Category" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem id="_IDGenColumnListItem1">
+                                <cells>
+                                    <Text id="_IDGenText6" text="{tableModel>date}" />
+                                    <Text id="_IDGenText7" text="{tableModel>description}" />
+                                    <Text id="_IDGenText8" text="{tableModel>amount}" />
+                                    <Text id="_IDGenText9" text="{tableModel>currency}" />
+                                    <Text id="_IDGenText10" text="{tableModel>category}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </Panel>
+            </content>
+        </Page>
+    </App>
+</mvc:View>
